@@ -1,0 +1,64 @@
+/* color  */
+
+:root {
+    --Very_dark_desaturated_blue: hsl(238, 29%, 16%);
+    --Soft_red: hsl(14, 88%, 65%);
+    --Soft_violet: hsl(273, 75%, 66%);
+    --Soft_blue: hsl(240, 73%, 65%);
+}
+
+/* presets */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+img {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li, ul li a {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom,hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* main */
+
+main {
+    width: 1000px;
+    height: 500px;
+    
+    background-color: white;
+    background-image: url("../images/bg-pattern-desktop.svg");
+
+    display: flex;
+    gap: 50px;
+    
+}
+
+
+
+/* footer  */
+
+footer { 
+    font-size: 11px; 
+    text-align: center;
+
+ }
+    
+footer a { color: hsl(228, 45%, 44%); }
