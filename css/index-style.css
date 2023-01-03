@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 /* color  */
 
 :root {
+    /* text */
     --Very_dark_desaturated_blue: hsl(238, 29%, 16%);
     --Soft_red: hsl(14, 88%, 65%);
+
+    /* gradient */
     --Soft_violet: hsl(273, 75%, 66%);
     --Soft_blue: hsl(240, 73%, 65%);
 }
@@ -29,7 +34,7 @@ ul li, ul li a {
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(to bottom,hsl(273, 75%, 66%),hsl(240, 73%, 65%));
     display: flex;
     justify-content: center;
@@ -40,15 +45,31 @@ body {
 /* main */
 
 main {
-    width: 1000px;
+    width: 850px;
     height: 500px;
     
     background-color: white;
     background-image: url("../images/bg-pattern-desktop.svg");
 
     display: flex;
+    align-items: center;
     gap: 50px;
+
     
+}
+
+/* aside  */
+
+aside {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+aside h2 {
+    font-size: 12px;
 }
 
 
