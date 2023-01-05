@@ -84,16 +84,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: right;
-  gap: 50px;
+  
   position: relative;
 }
 
+/* i'm actually not sure this is the best way to do 
+this (to make the right part of the background blanck). 
+So if you have any idea, I would apreciate it. Thank you ! */
 main::after {
   content: "";
   display: block;
   position: absolute;
   right: 0px;
-  bottom: 0px;
   width: 525px;
   height: 100%;
   background-color: white;
@@ -102,7 +104,7 @@ main::after {
 
 #div-cube {
   position: relative;
-  left: -129px;
+  left: -179px;
   top: 205px;
 }
 
@@ -110,7 +112,7 @@ main::after {
   position: absolute;
   left: -425px;
   bottom: 65px;
-  z-index: 3;
+  z-index: 1;
 }
 
 /* shadow of cube */
@@ -122,8 +124,7 @@ main::after {
   bottom: 150px;
   width: 10px;
   height: 10px;
-  z-index: 1;
-
+  
   box-shadow: 0px 0px 35px 35px rgba(0, 0, 0, 0.2);
 }
 
@@ -133,7 +134,7 @@ main > img:nth-child(2) {
   position: absolute;
   left: -80px;
   clip: rect(0px, 500px, 400px, 80px);
-  z-index: 2;
+  
 }
 
 /* aside (right part)  */
@@ -147,7 +148,7 @@ aside {
   margin-right: 103px;
 
   box-shadow: 0 0 0px 50px white;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* title (FAQ) */
@@ -202,6 +203,7 @@ ul > li > div > h2 {
   color: var(--Very_dark_grayish_blue);
   font-weight: 400;
   font-size: 14px;
+  transition: font-weight 0.4s;
 }
 
 /* when the question has been clicked */
