@@ -1,48 +1,34 @@
-const ul = document.querySelector('ul');
-
+const ul = document.querySelector('.list_FAQ');
+const lis = document.querySelectorAll('li');
 
 ul.addEventListener("click", (event) => {
+
+    // get the li parent of the element clicked
+    const li = event.target.closest("li");
+    console.log(li.classList);
+    // if the question clicked is the 
+    // question which is already active
+    if (li.classList[0] === "active") {
+        // remove active from every li
+        removeActiveLi();
+        return
+    } else {
+        // remove active from every li
+        removeActiveLi();
+        // add the class active to the li clicked
+        li.classList.add("active");
+    }
     
-    const listAnswers = document.querySelectorAll('p');
-    const listQuestion = document.querySelectorAll('h2');
-
-    // remove .text-hidden of every p 
-    for (const p of listAnswers) {
-        p.classList.add("hidden-text");
-    }
-    // remove .bold-question of every h2 
-    for (const h2 of listQuestion) {
-        h2.classList.remove("bold-question");
-    }
-
-
-    // edit the element clicked
-    const target = event.target;
-
-
-    let li = getli(target);
-    if (li.nodeName === "LI") {
-        let question = li.children[0];
-        question = question.children[0];
-        question.classList.add("bold-question");
-
-        let answer = li.children[1]; 
-        answer.classList.remove("hidden-text");
-    }
-
+    
+    
+    
 });
 
-
 /**
- * 
- * @param {Node} node 
+ * remove active from every li
  */
-function getli(node) {
-    let parent = node;
-    // while the node is not an li node
-    while (parent.nodeName != "LI")  {
-        parent = parent.parentElement;
-    }
-
-    return parent;
+function removeActiveLi() {
+	lis.forEach((item) => {
+		item.classList.remove('active')
+	})
 }
