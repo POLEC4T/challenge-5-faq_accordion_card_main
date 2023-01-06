@@ -1,14 +1,7 @@
-/******************* Responsive part *******************/
-
-// if the page is for mobile,
-// then the first p is 3 lines
-// instead of two
-if (window.innerWidth != 1100) {
-  lis[0].classList.add("line3-li");
-}
+// boolean : true if width of the screen is <= 1100
+const mobile = window.innerWidth <= 1100;
 
 /******************* List animation part *******************/
-
 const ul = document.querySelector("ul");
 const lis = document.querySelectorAll("li");
 const li3 = document.querySelector(".line3-li");
@@ -77,8 +70,17 @@ const cube = document.querySelector("#div-cube");
 // const main = document.querySelector('main');
 
 document.addEventListener("mousemove", (event) => {
-  // main.style.transform = `translate(${event.pageX/300}px, ${event.pageY/300}px)`;
-  cube.style.transform = `translate(${event.pageX / 100}px, ${
-    event.pageY / 50
-  }px)`;
+  let quotient;
+  mobile ? quotient = 100 : quotient = 50;
+
+  cube.style.transform = `translate(-${event.pageX / quotient}px, -${event.pageY / quotient}px)`;
 });
+
+/******************* Responsive part *******************/
+
+// if the page is for mobile,
+// then the first p is 3 lines
+// instead of two
+if (mobile) {
+  lis[0].classList.add("line3-li");
+}
