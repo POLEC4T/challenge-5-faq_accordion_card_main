@@ -67,12 +67,12 @@ function toggleUlActive() {
 /******************* Cube animation part *******************/
 
 const cube = document.querySelector("#div-cube");
-// const main = document.querySelector('main');
 
 document.addEventListener("mousemove", (event) => {
   let quotient;
+  // are we on a mobile screen ?
   mobile ? quotient = 100 : quotient = 50;
-
+  // move the cube according to the cursor position
   cube.style.transform = `translate(-${event.pageX / quotient}px, -${event.pageY / quotient}px)`;
 });
 
