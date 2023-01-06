@@ -100,8 +100,8 @@ I had a first approach of the perspective in css, I created the animation of my 
 
 ### Useful resources
 
-- [Example resource 1](https://www.youtube.com/watch?v=ursf79ZAI8c&t=577s) - This helped me to understand perspective.
-- [Example resource 2](https://www.youtube.com/watch?v=gowLBZivZDY) - This helped me to make the animation of the list. I really like the final result and will reuse it in the future.
+- [Perspective youtube video](https://www.youtube.com/watch?v=ursf79ZAI8c&t=577s) - This helped me to understand perspective.
+- [List animation youtube video](https://www.youtube.com/watch?v=gowLBZivZDY) - This helped me to make the animation of the list. I really like the final result and will reuse it in the future.
 
 ## Author
 
