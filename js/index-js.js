@@ -1,17 +1,17 @@
-/******************* responsive part *******************/
+/******************* Responsive part *******************/
 
-// if the page is for mobile, 
-// then the first p is 3 lines 
+// if the page is for mobile,
+// then the first p is 3 lines
 // instead of two
 if (window.innerWidth != 1100) {
   lis[0].classList.add("line3-li");
 }
 
-/******************* list animation part *******************/
+/******************* List animation part *******************/
 
 const ul = document.querySelector("ul");
 const lis = document.querySelectorAll("li");
-const li3 = document.querySelector('.line3-li');
+const li3 = document.querySelector(".line3-li");
 
 ul.addEventListener("click", (event) => {
   // get the li parent of the element clicked
@@ -46,9 +46,9 @@ function removeActiveLi() {
  * If one of the children of ul
  * is active (one of the lis),
  * ul is set active so that I can
- * if the child is the li with 3 
- * lines (others have 2), the 
- * ul is gonna have a different 
+ * if the child is the li with 3
+ * lines (others have 2), the
+ * ul is gonna have a different
  * class
  */
 function toggleUlActive() {
@@ -63,23 +63,22 @@ function toggleUlActive() {
     }
   });
   if (is3line) {
-    ul.classList.add("ul-active-3lines")
-    return
+    ul.classList.add("ul-active-3lines");
+    return;
   } else {
-    ul.classList.remove("ul-active-3lines")
+    ul.classList.remove("ul-active-3lines");
   }
   hasActive ? ul.classList.add("ul-active") : ul.classList.remove("ul-active");
 }
 
-
-
 /******************* Cube animation part *******************/
 
-const cube = document.querySelector('#div-cube');
+const cube = document.querySelector("#div-cube");
 // const main = document.querySelector('main');
 
-document.addEventListener('mousemove', (event) => {
-  
+document.addEventListener("mousemove", (event) => {
   // main.style.transform = `translate(${event.pageX/300}px, ${event.pageY/300}px)`;
-  cube.style.transform = `translate(${event.pageX/100}px, ${event.pageY/50}px)`;
+  cube.style.transform = `translate(${event.pageX / 100}px, ${
+    event.pageY / 50
+  }px)`;
 });
