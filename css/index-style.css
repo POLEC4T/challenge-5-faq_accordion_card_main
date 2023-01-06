@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-/* color  */
+/******************* presets part *******************/
 
 :root {
+  /************* colors *************/
   /* text bold*/
   --Very_dark_desaturated_blue: hsl(238, 29%, 16%);
   --Soft_red: hsl(14, 88%, 65%);
 
   /* text Neutral */
-
   --Very_dark_grayish_blue: hsl(237, 12%, 33%);
   --Dark_grayish_blue: hsl(240, 6%, 50%);
 
@@ -18,9 +18,11 @@
 
   /* dividers */
   --Light-grayish-blue: hsl(240, 5%, 91%);
-}
 
-/* presets */
+  /************* vars *************/
+
+  --li-height: 50px;
+}
 
 * {
   margin: 0;
@@ -39,7 +41,7 @@ ul li a {
   text-decoration: none;
 }
 
-/* header  */
+/******************* header part *******************/
 
 header {
   font-size: 11px;
@@ -52,7 +54,7 @@ header a {
   color: hsl(228, 45%, 44%);
 }
 
-/* body */
+/******************* body part *******************/
 
 body {
   height: 100vh;
@@ -67,7 +69,7 @@ body {
   flex-direction: column;
 }
 
-/* main */
+/******************* main part *******************/
 
 main {
   width: 920px;
@@ -76,36 +78,23 @@ main {
   border-radius: 22px;
   background-color: white;
   background-image: url("../images/bg-pattern-desktop.svg");
-  background-position: 395px 650px;
-  background-clip: rect(0px, 100px, 100px, 50px);
+  background-position: -575px -290px;
+  background-repeat: no-repeat;
 
   box-shadow: 0px 80px 50px -30px rgba(0, 0, 0, 0.2);
 
   display: flex;
   align-items: center;
   justify-content: right;
-  
-  position: relative;
-}
 
-/* i'm actually not sure this is the best way to do 
-this (to make the right part of the background blanck). 
-So if you have any idea, I would apreciate it. Thank you ! */
-main::after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 0px;
-  width: 525px;
-  height: 100%;
-  background-color: white;
-  border-radius: 22px;
+  position: relative;
 }
 
 #div-cube {
   position: relative;
   left: -179px;
   top: 205px;
+  z-index: 1;
 }
 
 #cube {
@@ -113,6 +102,8 @@ main::after {
   left: -425px;
   bottom: 65px;
   z-index: 1;
+
+  transition: transform 0.1s ease-out;
 }
 
 /* shadow of cube */
@@ -124,21 +115,18 @@ main::after {
   bottom: 150px;
   width: 10px;
   height: 10px;
-  
+
   box-shadow: 0px 0px 35px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* image of girl */
-
 main > img:nth-child(2) {
   position: absolute;
   left: -80px;
   clip: rect(0px, 500px, 400px, 80px);
-  
 }
 
-/* aside (right part)  */
-
+/******************* right part *******************/
 aside {
   display: flex;
   flex-direction: column;
@@ -147,7 +135,6 @@ aside {
   height: 80%;
   margin-right: 103px;
 
-  box-shadow: 0 0 0px 50px white;
   z-index: 1;
 }
 
@@ -162,18 +149,22 @@ aside > h1 {
 ul {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 225px;
+
+  height: calc(var(--li-height) * 5);
   transition: height 0.4s ease-out;
 }
 
 .ul-active {
-  height: 275px;
+  height: calc(var(--li-height) * 6);
+}
+
+.ul-active-3lines {
+  height: calc(var(--li-height) * 6 + 20px);
 }
 
 /* container of question/answer */
 ul > li {
-  height: 45px;
+  height: var(--li-height);
   flex-shrink: 1;
   flex-grow: 1;
   overflow: hidden;
@@ -191,7 +182,7 @@ ul > li {
 
 /* container of question with arrow */
 ul > li > div {
-  height: 45px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -223,20 +214,10 @@ p {
   font-size: 12px;
   font-weight: 400;
   color: var(--Dark_grayish_blue);
-
   position: absolute;
-
   line-height: 17px;
   width: 330px;
-
-  /* display: none; */
 }
-
-.active > p {
-  display: block;
-}
-
-/* arrow  */
 
 .arrow-wrapper {
   height: 7px;
@@ -258,4 +239,77 @@ p {
   top: 0;
   transform-style: preserve-3d;
   transition: transform 0.5s cubic-bezier(0, 0, 0.07, 1);
+}
+
+/******************* responsive part *******************/
+
+@media (max-width: 1100px) {
+  body {
+    justify-content: flex-end;
+  }
+
+  main {
+    width: 330px;
+    height: 535px;
+    margin-bottom: 80px;
+    justify-content: center;
+    background-position: 50px -130px;
+    background-size: 235px;
+  }
+
+  /* image of the girl */
+  main > img:nth-child(2) {
+    width: 235px;
+    top: -108px;
+    left: 50px;
+
+    clip: auto;
+  }
+
+  /* the whole thing */
+  aside {
+    margin: 0;
+    padding-top: 100px;
+    width: 85%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* container of container of question/answer */
+  ul {
+    width: 100%;
+  }
+
+  /* question */
+  ul > li > div > h2 {
+    font-size: 13px;
+  }
+
+  /* title (FAQ) */
+  aside > h1 {
+    padding: 25px 0 15px 0;
+  }
+
+  /* answers */
+  p {
+    width: 94%;
+  }
+
+  #cube {
+    width: 95px;
+    left: 197px;
+    bottom: 435px;
+  }
+
+  #div-cube::after {
+    left: 239px;
+    bottom: 480px;
+
+    box-shadow: 0px 10px 20px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .arrow-wrapper {
+    margin: 0;
+  }
 }
