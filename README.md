@@ -26,6 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
+![](./gifAnimation.gif)
 ![](./screenshot.png)
 ![](./screenshot-mobile.png)
 
